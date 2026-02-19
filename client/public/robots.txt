@@ -1,0 +1,6 @@
+# Bounce Back Fitness - robots.txt
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://bouncebackfit.com/sitemap.xml

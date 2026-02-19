@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(83, 76%, 42%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(60, 4.8%, 95.9%);
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  --accent: hsl(60, 4.8%, 95.9%);
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+  
+  /* Brand Colors */
+  --brand-yellow: hsl(50, 93%, 54%);
+  --brand-green: hsl(83, 76%, 42%);
+  --brand-dark-green: hsl(83, 76%, 32%);
+  --brand-gray: hsl(0, 0%, 20%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(83, 76%, 42%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .brand-yellow {
+    background-color: var(--brand-yellow);
+  }
+  
+  .brand-green {
+    background-color: var(--brand-green);
+  }
+  
+  .brand-dark-green {
+    background-color: var(--brand-dark-green);
+  }
+  
+  .brand-gray {
+    background-color: var(--brand-gray);
+  }
+  
+  .text-brand-yellow {
+    color: var(--brand-yellow);
+  }
+  
+  .text-brand-green {
+    color: var(--brand-green);
+  }
+  
+  .text-brand-dark-green {
+    color: var(--brand-dark-green);
+  }
+  
+  .text-brand-gray {
+    color: var(--brand-gray);
+  }
+  
+  .hero-gradient {
+    background: linear-gradient(135deg, 
+      hsl(120, 40%, 95%) 0%, 
+      hsl(150, 30%, 92%) 25%, 
+      hsl(180, 25%, 90%) 50%, 
+      hsl(160, 35%, 88%) 75%, 
+      hsl(140, 45%, 85%) 100%
+    );
+    position: relative;
+  }
+  
+  .hero-gradient::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(circle at 20% 30%, hsla(83, 76%, 42%, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, hsla(50, 93%, 54%, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 50% 50%, hsla(160, 50%, 70%, 0.05) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  
+  .announcement-banner {
+    background: linear-gradient(90deg, var(--brand-yellow) 0%, hsl(50, 93%, 64%) 50%, var(--brand-yellow) 100%);
+    background-size: 200% 100%;
+    animation: shimmer 3s ease-in-out infinite;
+  }
+  
+  @keyframes shimmer {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+  
+  .card-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  }
+  
+  .bounce-icon {
+    transition: transform 0.3s ease;
+  }
+  
+  .bounce-icon:hover {
+    transform: translateY(-3px);
+  }
+}
