@@ -1,16 +1,19 @@
-import type { InsertNewsletter, InsertContact } from "@shared/schema";
+// Reserved for future external API integrations.
+// Contact form is handled via embedded Google Forms iframe.
+// Booking is handled via Square booking link.
 
-// Placeholder functions for external service integration
-// Replace these with actual Mailchimp/Square API calls when ready
-
-export const subscribeToNewsletter = async (data: InsertNewsletter) => {
+export const subscribeToNewsletter = async (email: string, name?: string) => {
   // TODO: Replace with Mailchimp API integration
-  console.log("Newsletter signup:", data);
-  return { message: "Ready for Mailchimp integration", newsletter: data };
+  return { success: true, email, name };
 };
 
-export const submitContactForm = async (data: InsertContact) => {
-  // TODO: Replace with Square or other contact service integration
-  console.log("Contact form submission:", data);
-  return { message: "Ready for external service integration", contact: data };
+export const submitContactForm = async (data: {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone?: string;
+  message: string;
+}) => {
+  // TODO: Replace with contact service integration when needed
+  return { success: true, ...data };
 };

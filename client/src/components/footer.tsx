@@ -64,7 +64,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="text-center text-gray-300">
-          <p>&copy; 2024 Bounce Back Fitness. All rights reserved.</p>
+          <p>&copy; 2026 Bounce Back Fitness. All rights reserved.</p>
         </div>
       </div>
     </footer>
