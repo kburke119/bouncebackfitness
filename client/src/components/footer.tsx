@@ -1,69 +1,117 @@
 import bounceBackLogo from "../assets/bounce-back-logo.png";
-import floatLogo from "../assets/float-logo.jpg";
-import smoothieLogo from "../assets/smoothie-logo.avif";
+
+const BOOKING_URL =
+  "https://book.squareup.com/appointments/djulcbvblq3mzy/location/4SBNWX3643KXJ/services";
+const BRAND_GREEN = "#4AE54A";
 
 export default function Footer() {
-
   return (
-    <footer className="brand-gray text-white py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-8 bg-white border border-gray-200 rounded-lg py-8 px-4 shadow-sm">
-          <h3 className="text-xl font-bold mb-6 text-gray-800">Explore Our Brands</h3>
-          <div className="grid md:grid-cols-3 gap-8">
-            <a 
-              href="https://www.wantasmoothie.com" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block w-full hover:shadow-md transition-all duration-200"
-              data-testid="link-footer-smoothie"
-            >
-              <div className="flex justify-center items-center mb-4" style={{ height: "80px" }}>
-                <div className="bg-gray-50 rounded-lg p-3 border border-gray-200">
-                  <img 
-                    src={smoothieLogo} 
-                    alt="Want A Smoothie Logo"
-                    className="h-16 w-auto object-contain"
-                  />
-                </div>
-              </div>
-              <h4 className="font-semibold text-lg text-brand-yellow mb-2">Want A Smoothie</h4>
-              <p className="text-gray-600 text-sm">Fresh, convenient, real food & refreshments</p>
-            </a>
-            <div className="block w-full opacity-60 cursor-not-allowed" data-testid="link-footer-bounce">
-              <div className="flex justify-center items-center mb-4" style={{ height: "80px" }}>
-                <div className="bg-gray-50 rounded-lg p-3 border border-gray-200 flex items-center justify-center">
-                  <img 
-                    src={bounceBackLogo} 
-                    alt="Bounce Back Fitness Logo"
-                    className="h-16 w-auto object-contain"
-                  />
-                </div>
-              </div>
-              <h4 className="font-semibold text-lg text-gray-800 mb-2">Bounce Back Fitness</h4>
-              <p className="text-gray-600 text-sm">Corrective & Functional Training (Current)</p>
+    <footer className="bg-gray-900 text-white" aria-label="Site footer">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid md:grid-cols-3 gap-10">
+
+          {/* Brand column */}
+          <div className="flex flex-col items-start space-y-4">
+            <div className="flex items-center space-x-3">
+              <img
+                src={bounceBackLogo}
+                alt="Bounce Back Fitness Logo"
+                className="h-12 w-auto object-contain"
+                width={48}
+                height={48}
+              />
+              <span className="text-xl font-bold">Bounce Back Fitness</span>
             </div>
-            <a 
-              href="https://www.floatintowellness.com" 
+            <p className="text-gray-400 text-sm leading-relaxed">
+              Corrective &amp; Functional Training — helping you recover from
+              injuries, improve movement, and build lasting strength.
+            </p>
+            <a
+              href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="block w-full hover:shadow-md transition-all duration-200"
-              data-testid="link-footer-float"
+              className="inline-block font-bold text-black text-sm px-5 py-2 rounded-full transition-colors hover:brightness-90"
+              style={{ backgroundColor: BRAND_GREEN }}
+              aria-label="Book a session at Bounce Back Fitness"
             >
-              <div className="flex justify-center items-center mb-4" style={{ height: "80px" }}>
-                <div className="bg-gray-50 rounded-lg p-3 border border-gray-200">
-                  <img 
-                    src={floatLogo} 
-                    alt="Float Into Wellness Logo"
-                    className="h-16 w-16 object-cover rounded-full"
-                  />
-                </div>
-              </div>
-              <h4 className="font-semibold text-lg text-gray-800 mb-2">Float Into Wellness</h4>
-              <p className="text-gray-600 text-sm">Recovery for body and mind</p>
+              Book a Session
             </a>
           </div>
+
+          {/* Locations column */}
+          <div>
+            <h3
+              className="text-sm font-semibold uppercase tracking-widest mb-4"
+              style={{ color: BRAND_GREEN }}
+            >
+              Our Locations
+            </h3>
+            <div className="space-y-4 text-gray-400 text-sm">
+              <address className="not-italic">
+                <p className="font-semibold text-white">Woodbridge, NJ</p>
+                <p>94 Green St, Woodbridge, NJ 07095</p>
+              </address>
+              <address className="not-italic">
+                <p className="font-semibold text-white">Metuchen, NJ</p>
+                <p>215 Durham Ave, Metuchen, NJ 08840</p>
+              </address>
+            </div>
+          </div>
+
+          {/* Contact / Quick Links column */}
+          <div>
+            <h3
+              className="text-sm font-semibold uppercase tracking-widest mb-4"
+              style={{ color: BRAND_GREEN }}
+            >
+              Contact
+            </h3>
+            <div className="space-y-2 text-gray-400 text-sm">
+              <p>
+                <a
+                  href="mailto:Bounce.Back.Fit.NJ@gmail.com"
+                  className="hover:text-white transition-colors"
+                >
+                  Bounce.Back.Fit.NJ@gmail.com
+                </a>
+              </p>
+            </div>
+
+            <h3
+              className="text-sm font-semibold uppercase tracking-widest mt-6 mb-4"
+              style={{ color: BRAND_GREEN }}
+            >
+              Quick Links
+            </h3>
+            <nav aria-label="Footer navigation">
+              <ul className="space-y-2 text-gray-400 text-sm list-none">
+                <li>
+                  <a href="#about" className="hover:text-white transition-colors">
+                    About
+                  </a>
+                </li>
+                <li>
+                  <a href="#programs" className="hover:text-white transition-colors">
+                    Programs
+                  </a>
+                </li>
+                <li>
+                  <a href="#testimonials" className="hover:text-white transition-colors">
+                    Testimonials
+                  </a>
+                </li>
+                <li>
+                  <a href="#contact" className="hover:text-white transition-colors">
+                    Contact
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
         </div>
-        <div className="text-center text-gray-300">
+
+        {/* Bottom bar */}
+        <div className="mt-10 pt-6 border-t border-gray-800 text-center text-gray-500 text-sm">
           <p>&copy; 2026 Bounce Back Fitness. All rights reserved.</p>
         </div>
       </div>
